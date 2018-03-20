@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         Notifications.createChannel(this);
 
-        btn_set = (Button) findViewById(R.id.btn_set);
-        btn_dismiss = (Button) findViewById(R.id.btn_dismiss);
-        btn_snooze = (Button) findViewById(R.id.btn_snooze);
-        btn_repeat = (Button) findViewById(R.id.btn_repeat);
-        edt_time = (EditText) findViewById(R.id.edt_time);
+        btn_set = findViewById(R.id.btn_set);
+        btn_dismiss = findViewById(R.id.btn_dismiss);
+        btn_snooze = findViewById(R.id.btn_snooze);
+        btn_repeat = findViewById(R.id.btn_repeat);
+        edt_time = findViewById(R.id.edt_time);
 
         btn_set.setOnClickListener(new View.OnClickListener() {
             Boolean check = false;
@@ -43,6 +43,30 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
+            }
+        });
+
+        btn_dismiss.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), " Alarm dismissed.", Toast.LENGTH_SHORT);
+            }
+        });
+
+
+        btn_snooze.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), " Snoozed for 10 minutes. ", Toast.LENGTH_LONG);
+            }
+        });
+
+        btn_repeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), " Repeat every day. ", Toast.LENGTH_SHORT);
+
             }
         });
 
@@ -58,11 +82,6 @@ public class MainActivity extends AppCompatActivity {
         return time;
     }
 
-
-
-
-
-
     public void onClickSet(View view){
 
         Intent intent = new Intent(WakeupThiagoReceiver.ACTION);
@@ -72,10 +91,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Alarm set sucessfully.", Toast.LENGTH_SHORT).show();
     }
 
-
-
-
-        public void onClickRepeat(View view){
+    public void onClickRepeat(View view){
             Intent intent = new Intent(WakeupThiagoReceiver.ACTION);
             //Repeat the alarm how many times you want
                 AlarmUtils.scheduleRepeat(this, intent, getTime(), AlarmManager.INTERVAL_DAY);
@@ -89,10 +105,6 @@ public class MainActivity extends AppCompatActivity {
             AlarmUtils.dismiss(this, intent);
             Toast.makeText(this, "Alarm dismissed.",Toast.LENGTH_SHORT).show();
         }
-
-
-
-
 }
 
 
