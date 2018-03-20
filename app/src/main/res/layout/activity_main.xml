@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thiag.alarmclock.MainActivity">
+
+    <EditText
+        android:id="@+id/edt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_dismiss"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btn_dismiss"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:hint="HH:MM"
+        android:inputType="time"
+        tools:text="HH:MM" />
+
+    <Button
+        android:id="@+id/btn_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edt_time"
+        android:layout_alignStart="@+id/edt_time"
+        android:layout_below="@+id/edt_time"
+        android:layout_marginTop="63dp"
+        android:hint="Set"
+        tools:text="SET" />
+
+    <Button
+        android:id="@+id/btn_dismiss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_set"
+        android:layout_centerHorizontal="true"
+        android:hint="Dismiss"
+        tools:text="Dismiss" />
+
+    <Button
+        android:id="@+id/btn_snooze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_dismiss"
+        android:layout_alignBottom="@+id/btn_dismiss"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:hint="Snooze"
+        tools:text="Snooze" />
+
+    <Button
+        android:id="@+id/btn_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_dismiss"
+        android:layout_alignStart="@+id/btn_dismiss"
+        android:layout_centerVertical="true"
+        android:hint="Repeat"
+        tools:text="Repeat" />
+
+</RelativeLayout>
